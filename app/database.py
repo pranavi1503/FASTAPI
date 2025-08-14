@@ -1,11 +1,11 @@
 from sqlalchemy import create_engine
 
 def database_connection():
-    server = "DESKTOP-RM4N23G\\SQLEXPRESS02"
-    database = "bluhealth"
-    connection_string = (
-        f"mssql+pyodbc://@{server}/{database}"
-        f"?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes"
-    )
+    username="sql12794950"
+    password="ynVgE6zW8l"
+    host="sql12.freesqldatabase.com"
+    port=3306
+    database = "sql12794950"
+    connection_string = f"mysql+pymysql://{username}:{password}@{host}:{port}/{database}"
     engine = create_engine(connection_string)
     return engine
