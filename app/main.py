@@ -24,7 +24,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
 @app.get("/data")
 def get_data(current_user: dict = Depends(get_current_user)):
     print(current_user)
-    df = pd.read_sql("select * from health", engine)
+    df = pd.read_sql("select TOP 10 * from healthdata", engine)
     #print("Fetched DataFrame:")
     #print(df)
     return df.to_dict(orient="records")
